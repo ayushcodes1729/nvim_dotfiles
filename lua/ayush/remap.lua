@@ -57,6 +57,24 @@ vim.keymap.set(
     "oif err != nil {<CR>}<Esc>O.logger.Error(\"error\", \"error\", err)<Esc>F.;i"
 )
 
+vim.keymap.set({"i", "s"}, "<Tab>", function()
+  local ls = require("luasnip")
+  if ls.expand_or_jumpable() then
+    ls.expand_or_jump()
+  else
+    return "<Tab>"
+  end
+end, { expr = true })
+
+vim.keymap.set({"i", "s"}, "<S-Tab>", function()
+  local ls = require("luasnip")
+  if ls.jumpable(-1) then
+    ls.jump(-1)
+  else
+    return "<S-Tab>"
+  end
+end, { expr = true })
+
 vim.keymap.set("n", "<leader>ca", function()
     require("cellular-automaton").start_animation("make_it_rain")
 end)
