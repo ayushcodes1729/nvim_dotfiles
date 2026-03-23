@@ -19,8 +19,8 @@ require("mason-lspconfig").setup({
         "lua_ls",
         "pyright",
         "eslint",
-	"rust_analyzer",
-	"tombi"
+        "rust_analyzer",
+        "tombi"
     },
     automatic_installation = true,
 })
