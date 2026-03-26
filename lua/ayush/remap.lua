@@ -83,3 +83,8 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+vim.keymap.set('n', '<leader>yp', function()
+  vim.fn.setreg('+', vim.fn.expand('%:p')) -- Copies absolute path to system clipboard
+  vim.notify("Copied absolute path to clipboard", vim.log.levels.INFO) -- Optional notification
+end, { desc = 'Copy full file path' })
+
