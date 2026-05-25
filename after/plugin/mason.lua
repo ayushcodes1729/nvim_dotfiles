@@ -12,6 +12,7 @@ require("mason").setup({
 -- Auto install LSP servers
 require("mason-lspconfig").setup({
     ensure_installed = {
+        "angularls",
         "clangd",
         "ts_ls",
         "html",

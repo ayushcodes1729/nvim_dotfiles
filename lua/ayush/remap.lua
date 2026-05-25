@@ -4,6 +4,13 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+vim.keymap.set('n', 't', ':10split | terminal<CR> | startinsert<CR>', {noremap = true, silent = true})
+-- Move from terminal to the split above
+vim.keymap.set('t', '<C-w>k', [[<C-\><C-n><C-w>k]], {noremap = true, silent = true})
+
+-- Map Esc to exit Terminal mode (in terminal mode only)
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], {noremap = true})
+
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
